@@ -1,0 +1,58 @@
+---
+layout: default
+title:
+description: "Lingaoyang 的个人文字空间，关于学习、语言、技术与生活的长期思考。"
+permalink: /
+---
+<section class="hero container">
+  <div class="hero-main">
+    <p class="eyebrow"><span class="eyebrow-star">✳</span> A PERSONAL SPACE FOR THINKING</p>
+    <h1>以文字为锚，<br><em>向更大的世界</em>生长<span class="hero-period">。</span></h1>
+    <p class="hero-lead">你好，我是 <strong>Lingaoyang</strong>。<br>这里收藏我的好奇心：关于学习、语言、数学、技术，也关于人生中那些值得反复思考的问题。</p>
+    <div class="hero-actions">
+      <a class="primary-link" href="{{ '/archive/' | relative_url }}">阅读文章 <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="{{ '/about/' | relative_url }}">认识我 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <aside class="hero-aside">
+    <div class="hero-aside-top"><span>FIELD NOTES / 001</span><span class="ornament">✳</span></div>
+    <div class="hero-aside-center">
+      <span class="decorative-quote" aria-hidden="true">“</span>
+      <p>真正值得积累的，<br>不只是答案，<br>还有提出问题的能力。</p>
+      <span class="aside-signature">— Notes on becoming</span>
+    </div>
+    <div class="hero-aside-bottom"><span>独立思考</span><span class="mini-line"></span><span>长期主义</span><span class="mini-line"></span><span>持续生长</span></div>
+  </aside>
+</section>
+
+<section class="topic-band">
+  <div class="container topic-inner">
+    <span class="topic-label">正在关注</span>
+    <a href="{{ '/categories/' | relative_url }}">01 / 学习方法</a>
+    <a href="{{ '/categories/' | relative_url }}">02 / 英语学习</a>
+    <a href="{{ '/categories/' | relative_url }}">03 / 数学与思维</a>
+    <a href="{{ '/categories/' | relative_url }}">04 / 生活随笔</a>
+  </div>
+</section>
+
+<section class="container articles-section" id="latest">
+  <div class="section-heading">
+    <div><p class="eyebrow">THE JOURNAL</p><h2>最近的思考<span class="heading-accent">.</span></h2></div>
+    <a href="{{ '/archive/' | relative_url }}" class="section-more">查看全部文章 <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="posts-grid">
+    {% for post in site.posts limit: 6 %}
+      {% include post-card.html post=post %}
+    {% else %}
+      <p class="empty-state">第一篇文章即将到来。</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container closing-note">
+  <div class="closing-symbol">✳</div>
+  <div><p class="eyebrow">AN OPEN NOTEBOOK</p><h2>每篇文章，<br>都是与过去的自己对话。</h2></div>
+  <p>写作让模糊的想法变得清晰，也让细小的成长拥有痕迹。愿这个小小的空间，能够陪我走很长的路。</p>
+  <a href="{{ '/about/' | relative_url }}">了解这个博客的故事 <span aria-hidden="true">→</span></a>
+</section>
+

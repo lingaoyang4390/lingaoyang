@@ -1,0 +1,23 @@
+---
+layout: default
+title: 搜索文章
+description: 搜索博客中的标题、分类与正文。
+permalink: /search/
+search_page: true
+---
+<div class="container inner-page search-page" data-search-index="{{ '/search.json' | relative_url }}">
+  <div class="page-intro">
+    <p class="eyebrow">FIND SOMETHING INTERESTING</p>
+    <h1>搜索文章<span class="heading-accent">.</span></h1>
+    <p class="intro-text">输入一个词，寻找记录过的想法。支持中文、英文与多个关键词。</p>
+  </div>
+  <form class="search-form" role="search" id="search-form">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+    <label class="visually-hidden" for="search-input">搜索关键词</label>
+    <input id="search-input" type="search" placeholder="试试：英语、数学、成长……" autocomplete="off" spellcheck="false">
+    <kbd>/</kbd>
+  </form>
+  <p class="search-status" id="search-status" role="status" aria-live="polite">正在准备文章索引…</p>
+  <div class="search-results" id="search-results"></div>
+</div>
+

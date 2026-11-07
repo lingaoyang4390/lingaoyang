@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+<div class="container post-page">
+  <header class="post-header">
+    <a class="back-link" href="{{ '/' | relative_url }}">← 返回首页</a>
+    <div class="post-kicker">
+      <a href="{{ '/categories/' | relative_url }}">{{ page.categories | first | default: '随笔' }}</a>
+      <span class="dot" aria-hidden="true"></span>
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y 年 %m 月 %d 日' }}</time>
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+    <p class="post-author"><span class="author-mark">L</span> {{ page.author | default: site.author }} <span aria-hidden="true">·</span> 原创文章</p>
+  </header>
+
+  <div class="post-layout">
+    <article class="prose post-content" id="article-content">
+      {{ content }}
+      <div class="post-endmark" aria-hidden="true">✳</div>
+      <div class="post-after">
+        <p>感谢你读到这里。愿每一次认真思考，都留下痕迹。</p>
+        <a href="{{ '/archive/' | relative_url }}">继续阅读其他文章 →</a>
+      </div>
+    </article>
+
+    <aside class="toc-panel" id="toc-panel" aria-label="文章目录">
+      <div class="toc-sticky">
+        <p class="aside-label">ON THIS PAGE</p>
+        <nav id="toc-list" aria-label="文章目录"></nav>
+        <a class="toc-back" href="#main-content">↑ 回到顶部</a>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="post-neighbors" aria-label="上一篇和下一篇">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}"><small>← 上一篇</small><strong>{{ page.previous.title }}</strong></a>
+    {% else %}<span></span>{% endif %}
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="neighbor-next"><small>下一篇 →</small><strong>{{ page.next.title }}</strong></a>
+    {% else %}<span></span>{% endif %}
+  </nav>
+</div>
+

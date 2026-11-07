@@ -1,0 +1,32 @@
+---
+layout: default
+title: 文章分类
+description: 按主题探索博客文章。
+permalink: /categories/
+---
+<div class="container inner-page">
+  <div class="page-intro">
+    <p class="eyebrow">EXPLORE BY TOPIC</p>
+    <h1>文章分类<span class="heading-accent">.</span></h1>
+    <p class="intro-text">兴趣可以很广，思考可以很深。从一个主题开始慢慢探索。</p>
+  </div>
+  {% assign sorted_categories = site.categories | sort %}
+  <nav class="category-chips" aria-label="跳转到分类">
+    {% for category in sorted_categories %}
+      <a href="#category-{{ forloop.index }}">{{ category[0] }} <span>{{ category[1] | size }}</span></a>
+    {% endfor %}
+  </nav>
+  <div class="category-groups">
+    {% for category in sorted_categories %}
+    <section class="category-group" id="category-{{ forloop.index }}">
+      <div class="category-heading"><h2>{{ category[0] }}</h2><span>{{ category[1] | size }} POSTS</span></div>
+      {% for post in category[1] %}
+      <a class="category-row" href="{{ post.url | relative_url }}"><span>{{ post.title }}</span><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time><span aria-hidden="true">↗</span></a>
+      {% endfor %}
+    </section>
+    {% else %}
+    <p class="empty-state">还没有分类文章。</p>
+    {% endfor %}
+  </div>
+</div>
+

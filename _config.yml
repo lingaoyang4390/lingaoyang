@@ -1,0 +1,34 @@
+title: "Lingaoyang"
+description: "以文字为锚，向更大的世界生长。记录学习、思考与生活。"
+author: "Lingaoyang"
+lang: "zh-CN"
+timezone: "Asia/Shanghai"
+
+# 本地预览使用空路径。GitHub Actions 部署时自动识别仓库名并设置 baseurl。
+url: ""
+baseurl: ""
+
+permalink: /posts/:title/
+excerpt_separator: "<!--more-->"
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "Lingaoyang"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - .gitignore
+
