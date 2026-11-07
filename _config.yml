@@ -6,8 +6,7 @@ timezone: "Asia/Shanghai"
 
 # 本地预览使用空路径。GitHub Actions 部署时自动识别仓库名并设置 baseurl。
 url: ""
-baseurl: ""
-
+baseurl: "/lingaoyang"
 permalink: /posts/:title/
 excerpt_separator: "<!--more-->"
 markdown: kramdown
